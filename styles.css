@@ -1,11 +1,19 @@
 *{
     box-sizing: border-box;
 }
+body {
+    display: flex;
+    justify-content: center;
+}
+#pageWrapper {
+    width: 500px;
+    border-bottom: 2px solid #5995ed;
+}
 .header {
     padding-bottom: 10px;
 }
 .headerTitle {
-    background-color: darkslategrey;
+    background-color: #5995ed;
     color: white;
     font-weight: bold;
     text-transform: uppercase;
@@ -15,39 +23,85 @@
 .inputToDo {
     width: 79%;
     padding: 0;
-    border: 2px solid grey;
+    border: 2px solid #5995ed;
     height: 35px;
     line-height: 35px;
-    box-sizing: border-box;
+    text-align: center;
+    color: #60695c;
 }
 .buttonToDo {
     width: 20%;
-    padding: 0;
-    border: 2px solid grey;
+    border: none;
     height: 35px;
-    box-sizing: border-box;
-    float: right;
-    background-color: grey;
+    background-color: #19bd49;
     color:white;
     text-transform: uppercase;
+    font-weight: 900;
+    cursor: pointer;
+    transition: .3s;
+    position: relative;
+    letter-spacing: 1px;
+    border-radius: 10px 0;
+    overflow: hidden;
+    z-index: 1;
+}
+.buttonToDo::before {
+    content: "";
+    background-color: #138a36;
+    width: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: .3s;
+    line-height: 35px;
+    z-index: -1;
+}
+.buttonToDo:hover:before {
+    width: 100%;
 }
 .removeButton {
-    width: 20%;
-    padding: 0;
-    border: 2px solid grey;
+    width: 35px;
+    border: none;
     height: 35px;
-    box-sizing: border-box;
-    background-color: grey;
+    background-color: #5995ed;
     color:white;
     text-transform: uppercase;
+    font-weight: 900;
+    cursor: pointer;
+    transition: .3s;
+    position: relative;
+    letter-spacing: 1px;
+    overflow: hidden;
+    z-index: 1;
     float: right;
+    border-radius: 10px 0;
+}
+.removeButton:before {
+    content: "";
+    background-color: #f34213;
+    width: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: .3s;
+    line-height: 35px;
+    z-index: -1;
+}
+.removeButton:hover:before {
+    width: 100%;
+}
+.removeButton:after {
+    content: "\f2ed";
+    font-family: "Font Awesome 5 Free";
 }
 #toDoList li {
-    list-style: circle;
-    border-bottom: 1px solid grey;
-    width: 40%;
-    height: 35px;
+    border-bottom: 1px solid #5995ed;
     line-height: 35px;
-    margin: auto;
     margin-bottom: 2px;
+    color: #60695c;
+    list-style: none;
 }
